@@ -4,48 +4,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¿Cómo Llegar?</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Invitación de Celebración</title>
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,600;1,600&display=swap"
+        rel="stylesheet">
     <style>
-        /* Ajusta el tamaño a tu gusto */
+        /* Estilos generales */
+        body {
+            margin: 0;
+            font-family: 'Winky Sans', sans-serif;
+            background: #f9f9f9;
+            color: #333;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #6e7e5c;
+            padding: 20px;
+            color: #fff;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background: #6e7e5c;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn:hover {
+            background: #d18a7c;
+        }
+
+        footer {
+            padding: 10px;
+            background: #eee;
+            font-size: 0.9em;
+        }
+
+        /* Sección de inicio */
+        #startSection {
+            padding-top: 50px;
+        }
+
+        .envelope {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        /* Secciones ocultas */
+        .hidden {
+            display: none;
+        }
+
+        /* Estilo para el mapa embebido */
         #mapa-personalizado {
             width: 100%;
             height: 450px;
             border: none;
-            /* Quitar bordes si deseas */
+        }
+
+        /* Contenedor específico para el mapa */
+        .map-container {
+            padding: 20px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Media query para pantallas más grandes */
+        @media (min-width: 768px) {
+
+            .container,
+            .map-container {
+                width: 70%;
+                margin: 0 auto;
+            }
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <h1>¿Cómo Llegar?</h1>
-    </header>
-
-    <div class="container">
-        <p>Ubicación exacta del evento:</p>
-
-        <!-- Mapa embebido de Google My Maps -->
-        <iframe id="mapa-personalizado" src="<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1NLoPeapVa0M613cCl6vjF82qWwdeo0g&ehbc=2E312F" width="640" height="480"></iframe>"
-            allowfullscreen>
-        </iframe>
-
-        <!-- Botón para abrir Google Maps y comenzar la ruta -->
-        <p>
-            <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=LATITUD,LONGITUD&travelmode=driving"
-                target="_blank">
-                ¡Vamos!
-            </a>
-        </p>
-
-        <p>
-            <a class="btn" href="index.html">Volver a la Invitación</a>
-        </p>
+    <!-- Sección de apertura (start) -->
+    <div id="startSection" class="container">
+        <img class="envelope" src="pngwing.com.png" alt="Sobre">
+        <br>
+        <button class="btn" id="openBtn">Abrir Invitación</button>
     </div>
 
-    <footer>
-        <p>&copy; [Año] Invitación de Boda</p>
-    </footer>
+    <!-- Sección principal (invitación) -->
+    <div id="mainSection" class="hidden">
+        <header>
+            <h1>¡Estás Invitado a la Comida Familiar!</h1>
+            <p>
+                La familia González Delgado se complace en invitarte a la celebración de Compromiso de
+                María del Refugio y Gonzalo Javier ante la sociedad.
+            </p>
+        </header>
+        <div class="container">
+            <img src="img20250320_21242096.jpg" alt="Boda">
+            <p>
+                Te esperamos el <strong>20 de Abril del 2025 a las 03:00 PM</strong> para compartir este día tan
+                especial.<br>
+                Lugar: <strong>Kuquinta, El Rancho Familiar</strong>
+            </p>
+            <!-- Botón para ver el mapa -->
+            <a class="btn" id="openMapBtn">Ver Ubicación</a>
+            <!-- Botón para confirmar asistencia -->
+            <a class="btn" href="https://wa.link/eu17bv">Confirmar Asistencia</a>
+        </div>
+        <footer>
+            <p>&copy;2025 Familia González Delgado</p>
+        </footer>
+    </div>
+
+    <!-- Sección del mapa -->
+    <div id="mapSection" class="hidden">
+        <header>
+            <h1>¿Cómo Llegar?</h1>
+        </header>
+        <div class="map-container">
+            <p>
+                Ubicación exacta del evento: Te recomendamos seguir por la carretera Rincon de Romos - Guadalupe hasta
+                estar cerca, ya que las indicaciones de Google Maps envían por una terracería. Te adjuntamos un mapa con
+                la ruta más fácil.
+            </p>
+            <!-- Mapa embebido de Google My Maps -->
+            <iframe id="mapa-personalizado"
+                src="https://www.google.com/maps/d/u/0/embed?mid=1NLoPeapVa0M613cCl6vjF82qWwdeo0g&ehbc=2E312F&noprof=1"
+                allowfullscreen>
+            </iframe>
+            <!-- Botón para iniciar navegación en Google Maps Mobile -->
+            <p>
+                <a class="btn"
+                    href="https://www.google.com/maps/dir/?api=1&destination=22.664090,-102.487736&travelmode=driving"
+                    target="_blank">
+                    ¡Vamos!
+                </a>
+            </p>
+            <!-- Botón para volver a la invitación principal -->
+            <p>
+                <a class="btn" id="backToMainBtn">Volver a la Invitación</a>
+            </p>
+        </div>
+        <footer>
+            <p>&copy;2025 Familia González Delgado</p>
+        </footer>
+    </div>
+
+    <!-- Elemento de audio (reproducido al 50% del volumen) -->
+    <audio id="bgAudio" loop>
+        <source src="love-song-español.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <script>
+        // Función para mostrar una sección y ocultar las demás
+        function showSection(sectionId) {
+            document.getElementById('startSection').classList.add('hidden');
+            document.getElementById('mainSection').classList.add('hidden');
+            document.getElementById('mapSection').classList.add('hidden');
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+
+        // Al hacer clic en "Abrir Invitación"
+        document.getElementById('openBtn').addEventListener('click', function () {
+            var audio = document.getElementById('bgAudio');
+            audio.volume = 0.01;
+            audio.play();
+            showSection('mainSection');
+        });
+
+        // Al hacer clic en "Ver Ubicación"
+        document.getElementById('openMapBtn').addEventListener('click', function () {
+            showSection('mapSection');
+        });
+
+        // Botón para volver a la invitación desde la sección del mapa
+        document.getElementById('backToMainBtn').addEventListener('click', function () {
+            showSection('mainSection');
+        });
+    </script>
 </body>
 
 </html>
