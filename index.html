@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Cómo Llegar?</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ajusta el tamaño a tu gusto */
+        #mapa-personalizado {
+            width: 100%;
+            height: 450px;
+            border: none;
+            /* Quitar bordes si deseas */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>¿Cómo Llegar?</h1>
+    </header>
+
+    <div class="container">
+        <p>Ubicación exacta del evento:</p>
+
+        <!-- Mapa embebido de Google My Maps -->
+        <iframe id="mapa-personalizado" src="<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1NLoPeapVa0M613cCl6vjF82qWwdeo0g&ehbc=2E312F" width="640" height="480"></iframe>"
+            allowfullscreen>
+        </iframe>
+
+        <!-- Botón para abrir Google Maps y comenzar la ruta -->
+        <p>
+            <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=LATITUD,LONGITUD&travelmode=driving"
+                target="_blank">
+                ¡Vamos!
+            </a>
+        </p>
+
+        <p>
+            <a class="btn" href="index.html">Volver a la Invitación</a>
+        </p>
+    </div>
+
+    <footer>
+        <p>&copy; [Año] Invitación de Boda</p>
+    </footer>
+</body>
+
+</html>
